@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace ProjectEuler
 {
-    class p01
+    class p03
     {
         static void Main(string[] args)
         {

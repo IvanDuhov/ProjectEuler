@@ -2,7 +2,7 @@
 
 namespace ProjectEuler
 {
-    class p01
+    class p02
     {
         static void Main(string[] args)
         {

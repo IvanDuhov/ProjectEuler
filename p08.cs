@@ -31,7 +31,7 @@ namespace ProjectEuler
                 product = 1;
             }
 
-            Console.WriteLine(greatestProduct);
+            Console.WriteLine("Answer: " + string.Join("*", answerDigits) +" = " +  greatestProduct);
             Console.ReadKey();
         }
     }

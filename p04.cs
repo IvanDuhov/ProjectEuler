@@ -4,38 +4,38 @@ using System.Linq;
 
 namespace ProjectEuler
 {
-    class p04
+    class p03
     {
         static void Main(string[] args)
         {
-            int largestPalindrome = 0;
+            bool solved = false;
 
-            for (int i = 100; i < 1000; i++)
+            uint num = 20;
+
+            while (!solved)
             {
-                for (int j = 100; j < 1000; j++)
+                bool isDividedWithNoRemainder = true;
+
+                for (int i = 1; i < 21; i++)
                 {
-                    int possiblePalindrome = i * j;
-                    string palin = possiblePalindrome.ToString();
-
-                    bool isPalindrome = true;
-
-                    for (int k = 0; k < palin.Length; k++)
+                    if (num % i != 0)
                     {
-                        if (palin[k] != palin[palin.Length - k - 1])
-                        {
-                            isPalindrome = false;
-                            break;
-                        }
+                        isDividedWithNoRemainder = false;
+                        break;
                     }
+                }
 
-                    if (isPalindrome && (possiblePalindrome > largestPalindrome))
-                    {
-                        largestPalindrome = possiblePalindrome;
-                    }
+                if (isDividedWithNoRemainder)
+                {
+                    solved = true;
+                }
+                else
+                {
+                    num++;
                 }
             }
 
-            Console.WriteLine(largestPalindrome);
+            Console.WriteLine(num);
             Console.ReadKey();
         }
     }

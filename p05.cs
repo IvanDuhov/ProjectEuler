@@ -4,38 +4,44 @@ using System.Linq;
 
 namespace ProjectEuler
 {
-    class p05
+    class p03
     {
         static void Main(string[] args)
         {
             bool solved = false;
-
-            uint num = 20;
+            int num = 1;
+            int primeNum = 1;
+            int index = 1;
 
             while (!solved)
             {
-                bool isDividedWithNoRemainder = true;
+                bool isPrime = true;
 
-                for (int i = 1; i < 21; i++)
+                for (int i = 2; i < num - 1; i++)
                 {
-                    if (num % i != 0)
+                    if (num % i == 0)
                     {
-                        isDividedWithNoRemainder = false;
+                        isPrime = false;
                         break;
                     }
                 }
 
-                if (isDividedWithNoRemainder)
+                if (isPrime)
+                {
+                    primeNum = num;
+                    index++;
+                    Console.WriteLine(num);
+                }
+
+                if (index == 10003)
                 {
                     solved = true;
                 }
-                else
-                {
-                    num++;
-                }
+
+                num++;
             }
 
-            Console.WriteLine(num);
+            Console.WriteLine(primeNum);
             Console.ReadKey();
         }
     }
